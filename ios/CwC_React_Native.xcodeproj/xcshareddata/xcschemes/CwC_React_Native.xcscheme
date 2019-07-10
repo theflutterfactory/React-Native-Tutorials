@@ -48,6 +48,34 @@
                ReferencedContainer = "container:CwC_React_Native.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "58B511DA1A9E6C8500147676"
+               BuildableName = "libRNFirebase.a"
+               BlueprintName = "RNFirebase"
+               ReferencedContainer = "container:../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2DC90EE4F4BFF1DE551566BEEDC9DC69"
+               BuildableName = "libFirebaseCore.a"
+               BlueprintName = "FirebaseCore"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

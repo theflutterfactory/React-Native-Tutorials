@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.0"
+    "react-native": "^0.60.0",
+    "react-native-elements": "^1.1.0",
+    "react-native-firebase": "^5.5.4",
+    "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.5.0",

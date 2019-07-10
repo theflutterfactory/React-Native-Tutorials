@@ -18,6 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* CwC_React_NativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CwC_React_NativeTests.m */; };
 		44B77054BB68F5AFA49B778D /* libPods-CwC_React_Native.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C7054856A30593FEEAFB1 /* libPods-CwC_React_Native.a */; };
 		496C918BCCD36506E39B8FF6 /* libPods-CwC_React_Native-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F4B210BF4EF6457DC6E0FA /* libPods-CwC_React_Native-tvOSTests.a */; };
+		81E6274B18694A9AA305F1B4 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE3F037258E47BD9CF871BF /* libRNFirebase.a */; };
 		880992BE22CFC3CF00A19613 /* libReact-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880992BD22CFC3CF00A19613 /* libReact-Core.a */; };
 		880EBCD022D0E8E400C1CC27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880EBCCF22D0E8E400C1CC27 /* GoogleService-Info.plist */; };
 		8CF46FFE171209B4E8EC91BC /* libPods-CwC_React_NativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A17F903678A7BEC268F8A6 /* libPods-CwC_React_NativeTests.a */; };
@@ -39,6 +40,20 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "CwC_React_Native-tvOS";
 		};
+		88D0949722D23CAF00071F1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D3D9F8A7F1F49639E4C6D04 /* RNFirebase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFirebase;
+		};
+		88D0949922D23D2000071F1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D3D9F8A7F1F49639E4C6D04 /* RNFirebase.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 58B511DA1A9E6C8500147676;
+			remoteInfo = RNFirebase;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -58,11 +73,13 @@
 		2D02E47B1E0B4A5D006451C7 /* CwC_React_Native-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CwC_React_Native-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* CwC_React_Native-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CwC_React_Native-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A17F903678A7BEC268F8A6 /* libPods-CwC_React_NativeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CwC_React_NativeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CE3F037258E47BD9CF871BF /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
 		84644F799D0F56E9848BF4B3 /* Pods-CwC_React_Native.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native.release.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native/Pods-CwC_React_Native.release.xcconfig"; sourceTree = "<group>"; };
 		8507D2B686101977BB400AD6 /* Pods-CwC_React_Native-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native-tvOSTests/Pods-CwC_React_Native-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		880992BD22CFC3CF00A19613 /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		880EBCCF22D0E8E400C1CC27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D03002DFBF94BA792007C01 /* Pods-CwC_React_Native-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native-tvOSTests/Pods-CwC_React_Native-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D3D9F8A7F1F49639E4C6D04 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		C4D6D55997C6034F452B7971 /* Pods-CwC_React_Native.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native/Pods-CwC_React_Native.debug.xcconfig"; sourceTree = "<group>"; };
 		C81C7054856A30593FEEAFB1 /* libPods-CwC_React_Native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CwC_React_Native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F4B210BF4EF6457DC6E0FA /* libPods-CwC_React_Native-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CwC_React_Native-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +105,7 @@
 			files = (
 				880992BE22CFC3CF00A19613 /* libReact-Core.a in Frameworks */,
 				44B77054BB68F5AFA49B778D /* libPods-CwC_React_Native.a in Frameworks */,
+				81E6274B18694A9AA305F1B4 /* libRNFirebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +176,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8D3D9F8A7F1F49639E4C6D04 /* RNFirebase.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -172,6 +191,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				88774B2986EEC99AD468A444 /* Pods */,
+				88D0949322D23CAF00071F1B /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -202,6 +222,22 @@
 				F06FD5DDC77D645D2C9F59B5 /* Pods-CwC_React_Native-tvOS.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		88D0949322D23CAF00071F1B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				7CE3F037258E47BD9CF871BF /* libRNFirebase.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		88D0949422D23CAF00071F1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88D0949822D23CAF00071F1B /* libRNFirebase.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +277,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				88D0949A22D23D2000071F1B /* PBXTargetDependency */,
 			);
 			name = CwC_React_Native;
 			productName = CwC_React_Native;
@@ -325,6 +362,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 88D0949422D23CAF00071F1B /* Products */;
+					ProjectRef = 8D3D9F8A7F1F49639E4C6D04 /* RNFirebase.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* CwC_React_Native */,
@@ -334,6 +377,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		88D0949822D23CAF00071F1B /* libRNFirebase.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFirebase.a;
+			remoteRef = 88D0949722D23CAF00071F1B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -597,6 +650,11 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* CwC_React_Native-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
+		88D0949A22D23D2000071F1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RNFirebase;
+			targetProxy = 88D0949922D23D2000071F1B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -621,9 +679,17 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = CwC_React_NativeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -641,9 +707,17 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = CwC_React_NativeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -664,6 +738,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = CwC_React_Native/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -686,6 +764,10 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = CwC_React_Native/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -713,8 +795,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = "CwC_React_Native-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -741,8 +831,16 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = "CwC_React_Native-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -768,8 +866,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = "CwC_React_Native-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -795,8 +901,16 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+				);
 				INFOPLIST_FILE = "CwC_React_Native-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
