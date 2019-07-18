@@ -11,6 +11,11 @@ import { addFood, getFoods } from './api/FoodsApi';
 import { ListItem, Divider } from 'react-native-elements';
 
 class FoodList extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Food List'
+    }
+  };
 
   colors = [
     'red', 'black', 'blue', 'green', 'orange', 'yellow', 'purple', 'white', 'brown'
