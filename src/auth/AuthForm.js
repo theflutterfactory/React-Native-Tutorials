@@ -38,7 +38,6 @@ const AuthForm = (props) => {
       />
       <Text style={styles.validationText}> {props.errors.password}</Text>
       <Button
-        raised
         onPress={() => props.handleSubmit()}
         buttonStyle={styles.button}
         title={props.authMode === 'login' ? 'Login' : 'Create Account'} />
@@ -64,7 +63,8 @@ const styles = StyleSheet.create({
   validationText: {
     marginTop: 8,
     marginBottom: 16,
-    color: 'red'
+    color: 'red',
+    alignSelf: 'center'
   },
   formInput: {
     width: 300,
@@ -84,21 +84,29 @@ export default withFormik({
   mapPropsToValues: () => ({ email: '', password: '' }),
   validate: (values, props) => {
     const errors = {};
-    if (!values.displayName && props.authMode === 'signup') {
-      errors.displayName = 'Display Name Required'
-    } else if (values.displayName.length < 5 && props.authMode === 'signup') {
-      errors.displayName = 'Minimum length of display name is 5 characters';
-    } else if (!values.email) {
+
+    if (!values.email) {
       errors.email = 'Email Required';
     } else if (!values.email) {
       errors.email = 'Email Required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
       errors.email = 'Invalid email address';
-    } else if (!values.password) {
+    }
+
+    if (!values.password) {
       errors.password = 'Password Required';
     } else if (values.password.length < 10) {
       errors.password = 'Minimum length of password is 10 characters';
     }
+
+    if (props.authMode === 'signup') {
+      if (!values.displayName) {
+        errors.displayName = 'Display Name Required'
+      } else if (values.displayName.length < 5) {
+        errors.displayName = 'Minimum length of display name is 5 characters';
+      }
+    }
+
     return errors;
   },
   handleSubmit: (values, { props }) => {
