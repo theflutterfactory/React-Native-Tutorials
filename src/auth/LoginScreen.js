@@ -20,17 +20,9 @@ class LoginScreen extends Component {
     }));
   }
 
-  login = ({ email, password }) => {
-  }
-
-  signup = ({ email, password, displayName }) => {
-  }
-
   render() {
     return (
       <AuthForm
-        login={this.login}
-        signup={this.signup}
         authMode={this.state.authMode}
         switchAuthMode={this.switchAuthMode}
       />

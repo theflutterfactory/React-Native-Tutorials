@@ -1,5 +1,12 @@
 import firebase from 'react-native-firebase';
 
+
+export function login({ email, password }) {
+}
+
+export function signup({ email, password, displayName }) {
+}
+
 export function addFood(food, addComplete) {
   firebase.firestore()
     .collection('Foods')
