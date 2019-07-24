@@ -110,5 +110,6 @@ export default withFormik({
     return errors;
   },
   handleSubmit: (values, { props }) => {
+    props.authMode === 'login' ? props.login(values) : props.signup(values)
   },
 })(AuthForm);

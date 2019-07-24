@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import AuthForm from './AuthForm';
+import { login, signup, subscribeToAuthChanges } from '../api/FoodsApi';
 
 class LoginScreen extends Component {
 
   state = {
-    authMode: 'login',
-    user: null
+    authMode: 'login'
   }
 
   componentDidMount() {
+    subscribeToAuthChanges(this.onAuthStateChanged)
   }
 
-  componentWillUnmount() {
+  onAuthStateChanged = (user) => {
+    if (user !== null) {
+      this.props.navigation.navigate('App');
+    }
   }
 
   switchAuthMode = () => {
@@ -23,6 +27,8 @@ class LoginScreen extends Component {
   render() {
     return (
       <AuthForm
+        login={login}
+        signup={signup}
         authMode={this.state.authMode}
         switchAuthMode={this.switchAuthMode}
       />

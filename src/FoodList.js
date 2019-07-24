@@ -7,13 +7,24 @@ import {
   FlatList,
   SafeAreaView
 } from 'react-native';
-import { addFood, getFoods } from './api/FoodsApi';
+import { addFood, getFoods, signout } from './api/FoodsApi';
 import { ListItem, Divider } from 'react-native-elements';
 
 class FoodList extends Component {
   static navigationOptions = ({ navigation }) => {
+
+    onSignedOut = () => {
+      console.log('signed out');
+      navigation.navigate('Auth');
+    }
+
     return {
-      title: 'Food List'
+      title: 'Food List',
+      headerRight: (
+        <Button
+          title='log out'
+          onPress={() => signout(onSignedOut)} />
+      )
     }
   };
 
