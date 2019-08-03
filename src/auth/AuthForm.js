@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { Button, Text } from 'react-native-elements'
 import { withFormik } from 'formik';
+import * as yup from 'yup';
 
 const AuthForm = (props) => {
 
@@ -53,7 +54,7 @@ const AuthForm = (props) => {
 
 const styles = StyleSheet.create({
   header: {
-    marginBottom: 32
+    marginBottom: 40
   },
   container: {
     flex: 1,
@@ -81,34 +82,13 @@ const styles = StyleSheet.create({
 });
 
 export default withFormik({
-  mapPropsToValues: () => ({ email: '', password: '' }),
-  validate: (values, props) => {
-    const errors = {};
-
-    if (!values.email) {
-      errors.email = 'Email Required';
-    } else if (!values.email) {
-      errors.email = 'Email Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    if (!values.password) {
-      errors.password = 'Password Required';
-    } else if (values.password.length < 10) {
-      errors.password = 'Minimum length of password is 10 characters';
-    }
-
-    if (props.authMode === 'signup') {
-      if (!values.displayName) {
-        errors.displayName = 'Display Name Required'
-      } else if (values.displayName.length < 5) {
-        errors.displayName = 'Minimum length of display name is 5 characters';
-      }
-    }
-
-    return errors;
-  },
+  mapPropsToValues: () => ({ email: '', password: '', displayName: '' }),
+  validationSchema: (props) => yup.object().shape({
+    email: yup.string().email().required(),
+    password: yup.string().min(10).required(),
+    displayName: props.authMode === 'signup' ?
+      yup.string().min(5).required() : null
+  }),
   handleSubmit: (values, { props }) => {
     props.authMode === 'login' ? props.login(values) : props.signup(values)
   },
