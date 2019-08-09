@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AuthForm from './AuthForm';
+import AuthForm from '../ui/AuthForm';
 import { login, signup, subscribeToAuthChanges } from '../api/FoodsApi';
 
 class LoginScreen extends Component {
