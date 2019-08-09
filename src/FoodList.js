@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { addFood, getFoods, signout } from './api/FoodsApi';
 import { ListItem, Divider } from 'react-native-elements';
+import ActionButton from 'react-native-action-button';
 
 class FoodList extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -56,7 +57,7 @@ class FoodList extends Component {
 
   render() {
     return (
-      <SafeAreaView >
+      <SafeAreaView style={styles.container} >
         <View style={styles.row}>
           <TextInput
             style={styles.input}
@@ -96,12 +97,19 @@ class FoodList extends Component {
           }
           }
         />
+        <ActionButton
+          buttonColor='blue'
+          onPress={() => this.props.navigation.navigate('FoodForm')}
+        />
       </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   row: {
     flexDirection: 'row',
     alignItems: 'center'
