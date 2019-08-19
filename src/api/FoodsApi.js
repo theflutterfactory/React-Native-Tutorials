@@ -30,13 +30,11 @@ export function signout(onSignedOut) {
 }
 
 export function addFood(food, addComplete) {
+  food.createdAt = firebase.firestore.FieldValue.serverTimestamp();
+
   firebase.firestore()
     .collection('Foods')
-    .add({
-      name: food.name,
-      color: food.color,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp()
-    }).then((snapshot) => snapshot.get()
+    .add(food).then((snapshot) => snapshot.get()
     ).then((foodData) => addComplete(foodData.data()))
     .catch((error) => console.log(error));
 }
