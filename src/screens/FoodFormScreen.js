@@ -45,6 +45,7 @@ export default class FoodFormScreen extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <FoodForm
         setFoodName={this.setFoodName}
@@ -52,7 +53,7 @@ export default class FoodFormScreen extends Component {
         setSubIngredients={this.setCurrentSubIngredient}
         submitSubIngredients={this.submitSubIngredients}
         ingredientArray={this.state.subIngredients}
-        onFoodAdded={this.props.navigation.state.params}
+        onFoodAdded={this.props.navigation.getParam('foodAddedCallback')}
       />
     );
   }

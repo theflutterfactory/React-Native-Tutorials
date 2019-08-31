@@ -7,7 +7,7 @@ import {
   FlatList,
   SafeAreaView
 } from 'react-native';
-import { addFood, getFoods, signout } from '../api/FoodsApi';
+import { getFoods, signout } from '../api/FoodsApi';
 import { ListItem, Divider } from 'react-native-elements';
 import ActionButton from 'react-native-action-button';
 
@@ -52,6 +52,7 @@ class FoodList extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <SafeAreaView style={styles.container} >
         <FlatList
@@ -63,7 +64,7 @@ class FoodList extends Component {
               <ListItem
                 title={item.name}
                 subtitle={item.category}
-                onPress={() => { }}
+                onPress={() => this.props.navigation.navigate('FoodDetail', { food: item })}
               />
             );
           }
@@ -71,7 +72,7 @@ class FoodList extends Component {
         />
         <ActionButton
           buttonColor='blue'
-          onPress={() => this.props.navigation.navigate('FoodForm', this.onFoodAdded)}
+          onPress={() => this.props.navigation.navigate('FoodForm', { foodAddedCallback: this.onFoodAdded })}
         />
       </SafeAreaView>
     );
