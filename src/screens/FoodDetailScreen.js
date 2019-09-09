@@ -16,7 +16,7 @@ class FoodDetailScreen extends Component {
       title: 'Food Details',
       headerRight: (
         <Button
-          onPress={() => { }}
+          onPress={() => { navigation.navigate('FoodForm', { food: navigation.getParam('food') }) }}
           title="Edit"
         />
       )

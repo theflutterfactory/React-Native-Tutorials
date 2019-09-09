@@ -5,27 +5,31 @@ export default class FoodFormScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     console.log(navigation);
     return {
-      title: 'New Food'
+      title: navigation.getParam('food') ? 'Edit Food' : 'New Food'
     }
   };
 
   state = {
-    foodName: null,
-    category: null,
+    food: {
+      name: '',
+      category: '',
+      subIngredients: []
+    },
     currentSubIngredient: null,
-    subIngredients: []
   }
 
-  setFoodName = (text) => {
-    this.setState(prevState => ({
-      foodName: prevState.foodName = text
-    }))
+  componentDidMount() {
+    const currentFood = this.props.navigation.getParam('food');
+    console.log(currentFood);
+
+    if (currentFood) {
+      this.setState(prevState => ({ food: prevState.food = currentFood }))
+    }
   }
 
-  setCategory = (text) => {
-    this.setState(prevState => ({
-      category: prevState.category = text
-    }))
+  onFoodUpdated = (food) => {
+    console.log(food);
+    this.props.navigation.popToTop();
   }
 
   setCurrentSubIngredient = (text) => {
@@ -39,7 +43,7 @@ export default class FoodFormScreen extends Component {
 
     if (ingredient && ingredient.length > 2) {
       this.setState(prevState => ({
-        subIngredients: [...prevState.subIngredients, ingredient],
+        food: { ...prevState.food, subIngredients: [...prevState.food.subIngredients, ingredient] },
       }))
     }
   }
@@ -48,12 +52,11 @@ export default class FoodFormScreen extends Component {
     console.log(this.props)
     return (
       <FoodForm
-        setFoodName={this.setFoodName}
-        setCategory={this.setCategory}
         setSubIngredients={this.setCurrentSubIngredient}
         submitSubIngredients={this.submitSubIngredients}
-        ingredientArray={this.state.subIngredients}
+        food={this.state.food}
         onFoodAdded={this.props.navigation.getParam('foodAddedCallback')}
+        onFoodUpdated={this.onFoodUpdated}
       />
     );
   }

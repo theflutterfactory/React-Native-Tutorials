@@ -39,6 +39,17 @@ export function addFood(food, addComplete) {
     .catch((error) => console.log(error));
 }
 
+export function updateFood(food, updateComplete) {
+  food.updatedAt = firebase.firestore.FieldValue.serverTimestamp();
+  console.log(food);
+
+  firebase.firestore()
+    .collection('Foods')
+    .doc(food.id).set(food)
+    .then(() => updateComplete(food))
+    .catch((error) => console.log(error));
+}
+
 export async function getFoods(foodsRetreived) {
 
   var foodList = [];
@@ -49,7 +60,9 @@ export async function getFoods(foodsRetreived) {
     .get()
 
   snapshot.forEach((doc) => {
-    foodList.push(doc.data());
+    const foodItem = doc.data();
+    foodItem.id = doc.id;
+    foodList.push(foodItem);
   });
 
   console.log(foodList);
