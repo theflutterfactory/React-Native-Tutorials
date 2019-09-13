@@ -4,22 +4,15 @@ import {
   Text,
   FlatList,
   StyleSheet,
-  Button
+  Alert
 } from 'react-native';
-import { Divider } from 'react-native-elements';
+import { Divider, Icon } from 'react-native-elements';
 
 class FoodDetailScreen extends Component {
 
-  static navigationOptions = ({ navigation }) => {
-    console.log(navigation);
+  static navigationOptions = () => {
     return {
-      title: 'Food Details',
-      headerRight: (
-        <Button
-          onPress={() => { navigation.navigate('FoodForm', { food: navigation.getParam('food') }) }}
-          title="Edit"
-        />
-      )
+      title: 'Food Details'
     }
   };
 
@@ -29,6 +22,35 @@ class FoodDetailScreen extends Component {
     console.log(food);
     return (
       <View style={styles.container}>
+        <View style={styles.row}>
+          <Icon
+            reverse
+            name='ios-create'
+            type='ionicon'
+            onPress={() =>
+              this.props.navigation.navigate('FoodForm', {
+                food: food
+              })
+            }
+          />
+          <Icon
+            reverse
+            name='ios-trash'
+            type='ionicon'
+            color='#CA300E'
+            onPress={() =>
+              Alert.alert(
+                'Delete?',
+                'Cannot be undone',
+                [
+                  { text: 'Cancel' },
+                  { text: 'OK', onPress: () => { } }
+                ],
+                { cancelable: false },
+              )
+            }
+          />
+        </View>
         <Text style={styles.headerText}>{food.name}</Text>
         <Text style={styles.categoryText}>Category: {food.category}</Text>
 
@@ -55,7 +77,16 @@ class FoodDetailScreen extends Component {
 const styles = StyleSheet.create({
   headerText: {
     fontSize: 32,
-    margin: 32
+    marginBottom: 32
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginTop: 16,
+    marginBottom: 16,
+    paddingLeft: 16,
+    paddingRight: 16
   },
   categoryText: {
     fontSize: 20,
@@ -73,7 +104,6 @@ const styles = StyleSheet.create({
     marginTop: 16
   },
   container: {
-    flex: 1,
     alignItems: 'center'
   },
   listContainer: {
