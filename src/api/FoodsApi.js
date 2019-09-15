@@ -50,6 +50,16 @@ export function updateFood(food, updateComplete) {
     .catch((error) => console.log(error));
 }
 
+export function deleteFood(food, deleteComplete) {
+  console.log(food);
+
+  firebase.firestore()
+    .collection('Foods')
+    .doc(food.id).delete()
+    .then(() => deleteComplete())
+    .catch((error) => console.log(error));
+}
+
 export async function getFoods(foodsRetreived) {
 
   var foodList = [];

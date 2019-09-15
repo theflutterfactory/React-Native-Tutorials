@@ -7,6 +7,7 @@ import {
   Alert
 } from 'react-native';
 import { Divider, Icon } from 'react-native-elements';
+import { deleteFood } from '../api/FoodsApi'
 
 class FoodDetailScreen extends Component {
 
@@ -18,6 +19,8 @@ class FoodDetailScreen extends Component {
 
   render() {
     const food = this.props.navigation.getParam('food');
+
+    const onFoodDeleted = this.props.navigation.getParam('foodDeletedCallback');
 
     console.log(food);
     return (
@@ -44,7 +47,7 @@ class FoodDetailScreen extends Component {
                 'Cannot be undone',
                 [
                   { text: 'Cancel' },
-                  { text: 'OK', onPress: () => { } }
+                  { text: 'OK', onPress: () => { deleteFood(food, onFoodDeleted) } }
                 ],
                 { cancelable: false },
               )

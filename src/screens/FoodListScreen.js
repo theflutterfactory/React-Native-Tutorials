@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View,
-  TextInput,
   Button,
   FlatList,
   SafeAreaView
@@ -30,13 +28,27 @@ class FoodList extends Component {
   };
 
   state = {
-    foodList: []
+    foodList: [],
+    selectedIndex: 0
   }
 
   onFoodAdded = (food) => {
     this.setState(prevState => ({
       foodList: [...prevState.foodList, food]
     }));
+    this.props.navigation.popToTop();
+  }
+
+  onFoodDeleted = () => {
+    console.log(this.state.selectedIndex);
+
+    var newFoodList = [...this.state.foodList];
+    newFoodList.splice(this.state.selectedIndex, 1);
+
+    this.setState(prevState => ({
+      foodList: prevState.foodList = newFoodList
+    }));
+
     this.props.navigation.popToTop();
   }
 
@@ -59,12 +71,17 @@ class FoodList extends Component {
           data={this.state.foodList}
           ItemSeparatorComponent={() => <Divider style={{ backgroundColor: 'black' }} />}
           keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => {
+          renderItem={({ item, index }) => {
             return (
               <ListItem
                 title={item.name}
                 subtitle={item.category}
-                onPress={() => this.props.navigation.navigate('FoodDetail', { food: item })}
+                onPress={() => {
+                  this.setState(prevState => ({ selectedIndex: prevState.selectedIndex = index }))
+                  this.props.navigation.navigate('FoodDetail', { food: item, foodDeletedCallback: this.onFoodDeleted })
+                }
+                }
+
               />
             );
           }
