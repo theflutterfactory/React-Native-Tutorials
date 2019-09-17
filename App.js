@@ -5,7 +5,8 @@ import LoginScreen from './src/screens/LoginScreen';
 import FoodFormScreen from './src/screens/FoodFormScreen';
 import FoodDetailScreen from './src/screens/FoodDetailScreen';
 
-import { createSwitchNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
+import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 const AppStack = createStackNavigator({
   FoodList: FoodListScreen,
