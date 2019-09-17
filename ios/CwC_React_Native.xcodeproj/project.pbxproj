@@ -19,7 +19,6 @@
 		44B77054BB68F5AFA49B778D /* libPods-CwC_React_Native.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C81C7054856A30593FEEAFB1 /* libPods-CwC_React_Native.a */; };
 		496C918BCCD36506E39B8FF6 /* libPods-CwC_React_Native-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F4B210BF4EF6457DC6E0FA /* libPods-CwC_React_Native-tvOSTests.a */; };
 		880992BE22CFC3CF00A19613 /* libReact-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880992BD22CFC3CF00A19613 /* libReact-Core.a */; };
-		880EBCD022D0E8E400C1CC27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880EBCCF22D0E8E400C1CC27 /* GoogleService-Info.plist */; };
 		8CF46FFE171209B4E8EC91BC /* libPods-CwC_React_NativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A17F903678A7BEC268F8A6 /* libPods-CwC_React_NativeTests.a */; };
 		E20C8DB431B27183C5EF4963 /* libPods-CwC_React_Native-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB647BF3BFF0FD46DD338F3 /* libPods-CwC_React_Native-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		84644F799D0F56E9848BF4B3 /* Pods-CwC_React_Native.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native.release.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native/Pods-CwC_React_Native.release.xcconfig"; sourceTree = "<group>"; };
 		8507D2B686101977BB400AD6 /* Pods-CwC_React_Native-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native-tvOSTests/Pods-CwC_React_Native-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		880992BD22CFC3CF00A19613 /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		880EBCCF22D0E8E400C1CC27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D03002DFBF94BA792007C01 /* Pods-CwC_React_Native-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native-tvOSTests/Pods-CwC_React_Native-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D6D55997C6034F452B7971 /* Pods-CwC_React_Native.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native/Pods-CwC_React_Native.debug.xcconfig"; sourceTree = "<group>"; };
 		C81C7054856A30593FEEAFB1 /* libPods-CwC_React_Native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CwC_React_Native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +163,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				880EBCCF22D0E8E400C1CC27 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* CwC_React_Native */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CwC_React_NativeTests */,
@@ -236,7 +233,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				457592BD32088B202F136011 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,7 +345,6 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				880EBCD022D0E8E400C1CC27 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,28 +436,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		457592BD32088B202F136011 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CwC_React_Native/Pods-CwC_React_Native-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CwC_React_Native/Pods-CwC_React_Native-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		562D73807A98A4C3AB0A66FC /* [CP] Check Pods Manifest.lock */ = {
