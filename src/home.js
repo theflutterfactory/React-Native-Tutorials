@@ -2,17 +2,25 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Text,
+  TextInput,
   Button
 } from 'react-native';
 
 export default class Home extends Component {
+
+  state = {
+    name: ''
+  }
+
   render() {
+    console.log(this.state.name)
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Coding with Curry</Text>
-        <Text style={styles.body}>This is the master branch. As you can see, there's not much here.
-      Please checkout the other branches for code related to specific tutorials/videos</Text>
+        <TextInput
+          style={styles.formInput}
+          onChangeText={name => this.setState({ name })}
+          placeholder='Name'
+        />
         <Button
           title='Go to Playground'
           onPress={() => { this.props.navigation.navigate('Playground') }} />
@@ -28,11 +36,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  title: {
-    fontSize: 32,
-    marginBottom: 32
-  },
-  body: {
-    fontSize: 22
+  formInput: {
+    width: 300,
+    height: 50,
+    borderColor: '#B5B4BC',
+    borderWidth: 1,
+    marginBottom: 16,
+    padding: 8,
+    fontSize: 20
   }
 });
