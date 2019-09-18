@@ -8,6 +8,10 @@ import {
 
 export default class Home extends Component {
 
+  static navigationOptions = {
+    title: 'Home'
+  }
+
   state = {
     name: ''
   }

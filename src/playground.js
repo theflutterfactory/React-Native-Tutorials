@@ -6,6 +6,11 @@ import {
 } from 'react-native';
 
 export default class Playground extends Component {
+
+  static navigationOptions = {
+    title: 'Playground'
+  }
+
   render() {
     return (
       <View style={styles.container}>
