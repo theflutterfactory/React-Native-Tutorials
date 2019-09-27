@@ -6,7 +6,7 @@ import {
   TextInput
 } from 'react-native';
 
-class FoodScreen extends React.Component {
+class ThirdComponent extends React.Component {
 
   state = {
     name: 'Kabob',
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default FoodScreen;
+export default ThirdComponent;
