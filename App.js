@@ -7,9 +7,24 @@ import SecondComponent from './src/SecondComponent';
 import ThirdComponent from './src/ThirdComponent';
 
 const AppStack = createStackNavigator({
-  FirstComponent: FirstComponent,
-  SecondComponent: SecondComponent,
-  ThirdComponent: ThirdComponent
+  FirstComponent: {
+    screen: FirstComponent,
+    navigationOptions: () => ({
+      title: 'First Component',
+    })
+  },
+  SecondComponent: {
+    screen: SecondComponent,
+    navigationOptions: () => ({
+      title: 'Second Component',
+    })
+  },
+  ThirdComponent: {
+    screen: ThirdComponent,
+    navigationOptions: () => ({
+      title: 'Third Component',
+    })
+  },
 });
 
 const AppContainer = createAppContainer(AppStack);
