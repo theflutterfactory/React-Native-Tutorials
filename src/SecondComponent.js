@@ -1,14 +1,15 @@
 import React from 'react';
 import {
-  View
+  View,
+  Button
 } from 'react-native';
 
-import ThirdComponent from './ThirdComponent';
-
-const SecondComponent = () => {
+const SecondComponent = (props) => {
   return (
     <View>
-      <ThirdComponent />
+      <Button
+        title='Go to Third Component'
+        onPress={() => props.navigation.navigate('ThirdComponent')} />
     </View>
   );
 }

@@ -1,14 +1,15 @@
 import React from 'react';
 import {
-  View
+  View,
+  Button
 } from 'react-native';
 
-import SecondComponent from './SecondComponent';
-
-const FirstComponent = () => {
+const FirstComponent = (props) => {
   return (
     <View>
-      <SecondComponent />
+      <Button
+        title='Go to Second Component'
+        onPress={() => props.navigation.navigate('SecondComponent')} />
     </View>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   StyleSheet,
   View,
@@ -6,34 +6,37 @@ import {
   TextInput
 } from 'react-native';
 
-class ThirdComponent extends React.Component {
+import { FoodContext } from './provider/FoodProvider';
 
-  state = {
-    name: 'Kabob',
-    calories: '110'
-  }
+const ThirdComponent = () => {
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Name: {this.state.name}</Text>
-        <Text style={styles.subTitle}>Calories: {this.state.calories}</Text>
-        <TextInput
-          style={styles.input}
-          placeholder='name'
-          onChangeText={text => this.setState(prevState => ({ name: prevState.name = text }))}
-          value={this.state.name}
-        />
+  // async componentDidMount() {
+  //   console.log("componentDidMount");
+  //   const result = await fetch('https://api.openbrewerydb.org/breweries/5494')
+  //   const brewery = await result.json()
+  //   console.log(brewery.name);
+  // }
 
-        <TextInput
-          style={styles.input}
-          placeholder='calories'
-          onChangeText={text => this.setState(prevState => ({ calories: prevState.calories = text }))}
-          value={this.state.calories}
-        />
-      </View>
-    );
-  }
+  const food = useContext(FoodContext);
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{food.name}</Text>
+      <Text style={styles.subTitle}>Calories: {food.calories}</Text>
+      <TextInput
+        style={styles.input}
+        placeholder='name'
+        onChangeText={text => food.setName(text)}
+        value={food.name}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder='calories'
+        onChangeText={text => food.setCalories(text)}
+        value={food.calories}
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

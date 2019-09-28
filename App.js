@@ -6,6 +6,8 @@ import FirstComponent from './src/FirstComponent';
 import SecondComponent from './src/SecondComponent';
 import ThirdComponent from './src/ThirdComponent';
 
+import { FoodProvider } from './src/provider/FoodProvider';
+
 const AppStack = createStackNavigator({
   FirstComponent: {
     screen: FirstComponent,
@@ -31,7 +33,9 @@ const AppContainer = createAppContainer(AppStack);
 
 const App = () => {
   return (
-    <AppContainer />
+    <FoodProvider>
+      <AppContainer />
+    </FoodProvider>
   );
 }
 
