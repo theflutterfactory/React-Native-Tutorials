@@ -12,7 +12,6 @@ import * as yup from 'yup';
 import { addFood, updateFood } from '../api/FoodsApi';
 
 const FoodForm = (props) => {
-  console.log(props);
   return (
     <View style={styles.container}>
       <TextInput
@@ -69,6 +68,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 8,
     height: 50,
+    color: 'black',
     width: '75%',
     marginBottom: 16,
     marginTop: 16
@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
   longFormInput: {
     width: '100%',
     height: 50,
+    color: 'black',
     borderColor: '#B5B4BC',
     borderWidth: 1,
     padding: 8,
