@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import FoodForm from '../ui/FoodForm';
+
 export default class FoodFormScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
-    console.log(navigation);
     return {
       title: navigation.getParam('food') ? 'Edit Food' : 'New Food'
     }
@@ -20,7 +20,6 @@ export default class FoodFormScreen extends Component {
 
   componentDidMount() {
     const currentFood = this.props.navigation.getParam('food');
-    console.log(currentFood);
 
     if (currentFood) {
       this.setState(prevState => ({ food: prevState.food = currentFood }))
@@ -49,7 +48,6 @@ export default class FoodFormScreen extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <FoodForm
         setSubIngredients={this.setCurrentSubIngredient}

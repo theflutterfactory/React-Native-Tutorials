@@ -13,7 +13,6 @@ class FoodList extends Component {
   static navigationOptions = ({ navigation }) => {
 
     onSignedOut = () => {
-      console.log('signed out');
       navigation.navigate('Auth');
     }
 
@@ -40,7 +39,6 @@ class FoodList extends Component {
   }
 
   onFoodDeleted = () => {
-    console.log(this.state.selectedIndex);
 
     var newFoodList = [...this.state.foodList];
     newFoodList.splice(this.state.selectedIndex, 1);
@@ -53,7 +51,6 @@ class FoodList extends Component {
   }
 
   onFoodsReceived = (foodList) => {
-    console.log(foodList);
     this.setState(prevState => ({
       foodList: prevState.foodList = foodList
     }));
@@ -64,7 +61,6 @@ class FoodList extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <SafeAreaView style={styles.container} >
         <FlatList
