@@ -3,7 +3,9 @@ import {
   StyleSheet,
   Button,
   FlatList,
-  SafeAreaView
+  SafeAreaView,
+  Text,
+  View,
 } from 'react-native';
 import { getFoods, signout } from '../api/FoodsApi';
 import { ListItem, Divider } from 'react-native-elements';
@@ -61,8 +63,8 @@ class FoodList extends Component {
   }
 
   render() {
-    return (
-      <SafeAreaView style={styles.container} >
+    return this.state.foodList.length > 0 ?
+      <SafeAreaView style={styles.container}>
         <FlatList
           data={this.state.foodList}
           ItemSeparatorComponent={() => <Divider style={{ backgroundColor: 'black' }} />}
@@ -87,14 +89,30 @@ class FoodList extends Component {
           buttonColor='blue'
           onPress={() => this.props.navigation.navigate('FoodForm', { foodAddedCallback: this.onFoodAdded })}
         />
-      </SafeAreaView>
-    );
+      </SafeAreaView> :
+      <View style={styles.textContainer}>
+        <Text style={styles.emptyTitle}>No Foods found</Text>
+        <Text style={styles.emptySubtitle}>Add a new food using the + button below</Text>
+      </View>
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  textContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyTitle: {
+    fontSize: 32,
+    marginBottom: 16
+  },
+  emptySubtitle: {
+    fontSize: 18,
+    fontStyle: 'italic'
   }
 });
 
