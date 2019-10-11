@@ -62,6 +62,13 @@ class FoodList extends Component {
     getFoods(this.onFoodsReceived);
   }
 
+  showActionButton = () =>
+    <ActionButton
+      buttonColor='blue'
+      onPress={() => this.props.navigation.navigate('FoodForm', { foodAddedCallback: this.onFoodAdded })}
+    />
+
+
   render() {
     return this.state.foodList.length > 0 ?
       <SafeAreaView style={styles.container}>
@@ -85,14 +92,12 @@ class FoodList extends Component {
           }
           }
         />
-        <ActionButton
-          buttonColor='blue'
-          onPress={() => this.props.navigation.navigate('FoodForm', { foodAddedCallback: this.onFoodAdded })}
-        />
+        {this.showActionButton()}
       </SafeAreaView> :
       <View style={styles.textContainer}>
         <Text style={styles.emptyTitle}>No Foods found</Text>
         <Text style={styles.emptySubtitle}>Add a new food using the + button below</Text>
+        {this.showActionButton()}
       </View>
   }
 }
