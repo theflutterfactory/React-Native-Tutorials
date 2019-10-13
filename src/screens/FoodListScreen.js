@@ -68,7 +68,6 @@ class FoodList extends Component {
       onPress={() => this.props.navigation.navigate('FoodForm', { foodAddedCallback: this.onFoodAdded })}
     />
 
-
   render() {
     return this.state.foodList.length > 0 ?
       <SafeAreaView style={styles.container}>
@@ -81,6 +80,11 @@ class FoodList extends Component {
               <ListItem
                 title={item.name}
                 subtitle={item.category}
+                leftAvatar={{
+                  size: 'large',
+                  rounded: false,
+                  source: item.image && { uri: item.image }
+                }}
                 onPress={() => {
                   this.setState(prevState => ({ selectedIndex: prevState.selectedIndex = index }))
                   this.props.navigation.navigate('FoodDetail', { food: item, foodDeletedCallback: this.onFoodDeleted })

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -9,11 +9,18 @@ import {
 import GridList from '../ui/GridList';
 import { withFormik } from 'formik';
 import * as yup from 'yup';
-import { addFood, updateFood } from '../api/FoodsApi';
+import { addFood, updateFood, uploadFood } from '../api/FoodsApi';
+import CurryImagePicker from '../ui/CurryImagePicker';
 
 const FoodForm = (props) => {
+
+  setFoodImage = (image) => {
+    props.setFieldValue('imageUri', image.uri);
+  }
+
   return (
     <View style={styles.container}>
+      <CurryImagePicker image={props.food.image} onImagePicked={setFoodImage} />
       <TextInput
         value={props.values.name}
         style={styles.longFormInput}
@@ -88,7 +95,11 @@ const styles = StyleSheet.create({
 });
 
 export default withFormik({
-  mapPropsToValues: ({ food }) => ({ name: food.name, category: food.category }),
+  mapPropsToValues: ({ food }) => ({
+    name: food.name,
+    category: food.category,
+    imageUri: null
+  }),
   enableReinitialize: true,
   validationSchema: (props) => yup.object().shape({
     name: yup.string().max(30).required(),
@@ -104,9 +115,10 @@ export default withFormik({
     if (props.food.id) {
       values.id = props.food.id;
       values.createdAt = props.food.createdAt;
-      updateFood(values, props.onFoodUpdated);
+      values.image = props.food.image;
+      uploadFood(values, props.onFoodUpdated, { updating: true });
     } else {
-      addFood(values, props.onFoodAdded)
+      uploadFood(values, props.onFoodAdded, { updating: false });
     }
   },
 })(FoodForm);

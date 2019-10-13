@@ -4,7 +4,8 @@ import {
   Text,
   FlatList,
   StyleSheet,
-  Alert
+  Alert,
+  Image
 } from 'react-native';
 import { Divider, Icon } from 'react-native-elements';
 import { deleteFood } from '../api/FoodsApi'
@@ -72,7 +73,7 @@ class FoodDetailScreen extends Component {
               }
             />
         }
-      </View>
+      </View >
     );
   }
 }
@@ -81,6 +82,11 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 32,
     marginBottom: 32
+  },
+  image: {
+    width: 400,
+    height: 200,
+    marginBottom: 16
   },
   row: {
     flexDirection: 'row',
