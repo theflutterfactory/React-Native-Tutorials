@@ -78,8 +78,11 @@ class FoodList extends Component {
           renderItem={({ item, index }) => {
             return (
               <ListItem
+                containerStyle={styles.listItem}
                 title={item.name}
-                subtitle={item.category}
+                subtitle={`Category: ${item.category}`}
+                titleStyle={styles.titleStyle}
+                subtitleStyle={styles.subtitleStyle}
                 leftAvatar={{
                   size: 'large',
                   rounded: false,
@@ -110,10 +113,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  listItem: {
+    marginTop: 8,
+    marginBottom: 8
+  },
   textContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  titleStyle: {
+    fontSize: 30
+  },
+  subtitleStyle: {
+    fontSize: 18
   },
   emptyTitle: {
     fontSize: 32,
