@@ -23,7 +23,7 @@ const AuthForm = (props) => {
 
   return (
     <View style={styles.container}>
-      <Text h3 style={styles.header}>Coding with Curry</Text>
+      <Text h2 style={styles.header}>Coding with Curry</Text>
       {props.authMode === 'signup' ? displayNameInput : null}
       <TextInput
         style={styles.formInput}
@@ -40,12 +40,12 @@ const AuthForm = (props) => {
       <Text style={styles.validationText}> {props.errors.password}</Text>
       <Button
         onPress={() => props.handleSubmit()}
-        buttonStyle={styles.button}
+        buttonStyle={styles.loginButton}
         title={props.authMode === 'login' ? 'Login' : 'Create Account'} />
       <Button
         backgroundColor='transparent'
         color='black'
-        buttonStyle={styles.button}
+        buttonStyle={styles.switchButton}
         onPress={() => props.switchAuthMode()}
         title={props.authMode === 'login' ? 'Switch to Signup' : 'Switch to Login'} />
     </View>
@@ -54,7 +54,7 @@ const AuthForm = (props) => {
 
 const styles = StyleSheet.create({
   header: {
-    marginBottom: 40
+    marginBottom: 60
   },
   container: {
     flex: 1,
@@ -75,9 +75,14 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     padding: 8
   },
-  button: {
+  loginButton: {
     width: 200,
-    marginBottom: 16
+    marginBottom: 16,
+    backgroundColor: '#6f37be',
+  },
+  switchButton: {
+    width: 200,
+    backgroundColor: '#3f51b5'
   }
 });
 

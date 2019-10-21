@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
     marginBottom: 32
   },
   image: {
-    width: 400,
-    height: 200,
+    width: '100%',
+    aspectRatio: 2,
     marginBottom: 16
   },
   row: {
