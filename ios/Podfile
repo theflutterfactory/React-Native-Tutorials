@@ -38,17 +38,12 @@ target 'CwC_React_Native' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
 
   use_native_modules!
-end
-
-target 'CwC_React_Native-tvOS' do
-  # Pods for CwC_React_Native-tvOS
-
-  target 'CwC_React_Native-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
 
