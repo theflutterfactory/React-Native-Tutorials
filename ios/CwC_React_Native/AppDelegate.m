@@ -16,6 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  [GMSServices provideAPIKey:@"AIzaSyBIY_G_toKI4xwpcRE_a5gC0Pbv02XXPxU"];
     
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
@@ -29,7 +31,6 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   
-  [GMSServices provideAPIKey:@"GOOGLE_API_KEY"];
   [self.window makeKeyAndVisible];
   return YES;
 }
