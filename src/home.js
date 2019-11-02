@@ -15,7 +15,7 @@ export default class Home extends Component {
       Please checkout the other branches for code related to specific tutorials/videos</Text>
         <Button
           title='Go to Playground'
-          onPress={() => { this.props.navigation.navigate('Playground') }} />
+          onPress={() => { this.props.navigation.navigate('MapScreen') }} />
       </View>
     );
   }

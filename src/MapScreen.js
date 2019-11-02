@@ -11,6 +11,11 @@ import MapView,
   from 'react-native-maps';
 
 export default class Playground extends Component {
+
+  static navigationOptions = {
+    title: 'San Francisco',
+  };
+
   state = {
     coordinates: [
       { name: '1', latitude: 37.8025259, longitude: -122.4351431 },
@@ -41,6 +46,7 @@ export default class Playground extends Component {
     return (
       <MapView
         provider={PROVIDER_GOOGLE}
+        showsUserLocation={true}
         style={styles.map}
         region={{
           latitude: 37.78825,
