@@ -18,15 +18,15 @@ export default class Playground extends Component {
 
   state = {
     coordinates: [
-      { name: '1', latitude: 37.8025259, longitude: -122.4351431 },
-      { name: '2', latitude: 37.7896386, longitude: -122.421646 },
-      { name: '3', latitude: 37.7665248, longitude: -122.4161628 },
-      { name: '4', latitude: 37.7734153, longitude: -122.4577787 },
-      { name: '5', latitude: 37.7948605, longitude: -122.4596065 },
+      { name: 'Burger', latitude: 37.8025259, longitude: -122.4351431, image: require('./img/burger.jpg') },
+      { name: 'Pizza', latitude: 37.7896386, longitude: -122.421646, image: require('./img/pizza.jpg') },
+      { name: 'Soup', latitude: 37.7665248, longitude: -122.4161628, image: require('./img/soup.jpg') },
+      { name: 'Sushi', latitude: 37.7734153, longitude: -122.4577787, image: require('./img/sushi.jpg') },
+      { name: 'Curry', latitude: 37.7948605, longitude: -122.4596065, image: require('./img/curry.jpg') },
     ]
   }
 
-  showWelcomeMessage = () => {
+  showWelcomeMessage = () =>
     Alert.alert(
       'Welcome to San Francisco',
       'The food is amazing',
