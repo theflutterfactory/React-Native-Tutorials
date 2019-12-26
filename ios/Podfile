@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 
-# platform :ios, '9.0'
+# platform :ios,   '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'CwC_React_Native' do
@@ -40,15 +40,5 @@ target 'CwC_React_Native' do
   end
 
   use_native_modules!
-end
-
-target 'CwC_React_Native-tvOS' do
-  # Pods for CwC_React_Native-tvOS
-
-  target 'CwC_React_Native-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
 
