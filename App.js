@@ -1,13 +1,11 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import Home from './src/home'
-import Playground from './src/playground';
+import FoodForm from './src/foodForm';
+import FoodList from './src/foodList';
 
 const AppStack = createStackNavigator({
-  Home: Home,
-  Playground: Playground
+  FoodForm: FoodForm,
+  FoodList: FoodList
 });
 
 export default createAppContainer(AppStack);
-
-
