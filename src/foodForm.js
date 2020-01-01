@@ -6,6 +6,8 @@ import {
   Text,
   Button
 } from 'react-native'
+import { connect } from 'react-redux';
+import { addFood } from './actions/food';
 
 class FoodForm extends Component {
 
@@ -18,35 +20,10 @@ class FoodForm extends Component {
   };
 
   state = {
-    food: null,
-    foodList: []
-  }
-
-  submitFood = (food) => {
-    this.setState(
-      {
-        foodList:
-          [...this.state.foodList, {
-            key: Math.random(),
-            name: food
-          }]
-      })
-
-  }
-
-  deleteFood = (key) => {
-    this.setState(
-      {
-        foodList:
-          [
-            ...this.state.foodList.filter((item) =>
-              item.key !== key)
-          ]
-      })
+    food: null
   }
 
   render() {
-    console.log(this.state.foodList);
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Redux</Text>
@@ -58,17 +35,12 @@ class FoodForm extends Component {
         />
         <Button title='Submit'
           color='black'
-          onPress={() => this.submitFood(this.state.food)}
+          onPress={() => this.props.add(this.state.food)}
         />
         <Button
           title='Go to FoodList'
           onPress={() =>
-            this.props.navigation.navigate('FoodList',
-              {
-                foodList: this.state.foodList,
-                deleteFood: this.deleteFood
-              })
-          }
+            this.props.navigation.navigate('FoodList')}
         />
       </View>
     );
@@ -96,4 +68,18 @@ const styles = StyleSheet.create({
   }
 });
 
-export default FoodForm;
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    foods: state.foodReducer.foodList
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    add: (food) => dispatch(addFood(food))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FoodForm);
