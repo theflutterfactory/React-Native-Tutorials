@@ -4,7 +4,7 @@ import {
   View,
   TextInput,
   Text,
-  Button
+  TouchableOpacity
 } from 'react-native'
 import { connect } from 'react-redux';
 import { addFood } from './actions/food';
@@ -33,15 +33,20 @@ class FoodForm extends Component {
           style={styles.foodInput}
           onChangeText={(food) => this.setState({ food })}
         />
-        <Button title='Submit'
-          color='black'
-          onPress={() => this.props.add(this.state.food)}
-        />
-        <Button
-          title='Go to FoodList'
+        <TouchableOpacity
+          style={{ marginBottom: 16 }}
+          onPress={() => {
+            this.props.add(this.state.food)
+            this.setState({ food: null })
+          }}>
+          <Text style={{ fontSize: 22, color: '#5fc9f8' }}>Submit</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{ marginBottom: 16 }}
           onPress={() =>
-            this.props.navigation.navigate('FoodList')}
-        />
+            this.props.navigation.navigate('FoodList')}>
+          <Text style={{ fontSize: 22 }}>Go to FoodList</Text>
+        </TouchableOpacity>
       </View>
     );
   }
