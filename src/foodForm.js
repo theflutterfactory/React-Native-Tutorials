@@ -15,7 +15,7 @@ class FoodForm extends Component {
     title: 'Home',
     headerTintColor: 'white',
     headerStyle: {
-      backgroundColor: 'blue',
+      backgroundColor: '#845cc3',
     },
   };
 

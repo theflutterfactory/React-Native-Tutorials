@@ -13,7 +13,7 @@ class FoodList extends Component {
     title: 'Food List',
     headerTintColor: 'white',
     headerStyle: {
-      backgroundColor: 'green',
+      backgroundColor: '#845cc3',
     },
   };
 
@@ -41,7 +41,7 @@ class FoodList extends Component {
 
 const styles = StyleSheet.create({
   listContainer: {
-    backgroundColor: 'grey',
+    backgroundColor: '#dce2ff',
     padding: 16
   },
   listText: {
