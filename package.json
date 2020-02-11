@@ -10,11 +10,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-navigation/bottom-tabs": "^5.0.0",
-    "@react-navigation/drawer": "^5.0.0",
-    "@react-navigation/material-top-tabs": "^5.0.0",
-    "@react-navigation/native": "^5.0.0",
-    "@react-navigation/stack": "^5.0.0",
+    "@react-native-community/masked-view": "^0.1.6",
+    "@react-navigation/bottom-tabs": "^5.0.1",
+    "@react-navigation/core": "^5.1.0",
+    "@react-navigation/drawer": "^5.0.1",
+    "@react-navigation/material-top-tabs": "^5.0.1",
+    "@react-navigation/native": "^5.0.1",
+    "@react-navigation/stack": "^5.0.1",
     "formik": "^1.5.8",
     "react": "16.9.0",
     "react-native": "^0.61.5",
@@ -22,12 +24,15 @@
     "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "^1.5.6",
     "react-native-reanimated": "^1.7.0",
-    "react-navigation-stack": "^1.10.3"
+    "react-native-safe-area-context": "^0.6.4",
+    "react-native-screens": "^2.0.0-beta.2",
+    "react-native-tab-view": "^2.13.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.5.0",
     "@babel/runtime": "7.5.0",
-    "@react-native-community/eslint-config": "0.0.3",
     "babel-jest": "24.8.0",
     "eslint": "^6.8.0",
     "jest": "24.8.0",
