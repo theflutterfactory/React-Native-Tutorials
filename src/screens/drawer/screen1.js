@@ -3,14 +3,10 @@ import { View, Text } from 'react-native';
 
 import { styles } from '../../styles/styles.js'
 
-class Screen1 extends Component {
-  render() {
-    return (
-      <View style={styles.center}>
-        <Text style={styles.title}>Contacts</Text>
-      </View>
-    );
-  }
+Screen1 = () => {
+  <View style={styles.center}>
+    <Text style={styles.title}>Contacts</Text>
+  </View>
 }
 
 export default Screen1;
