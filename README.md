@@ -7,6 +7,7 @@ Welcome to the React Native repo for Coding with Curry. Topics Covered are added
 * [Firebase](https://github.com/JulianCurrie/CwC_React_Native/tree/firebase_basics)
 * [React Native Maps](https://github.com/JulianCurrie/CwC_React_Native/tree/react-native-maps_example)
 * [Redux](https://github.com/JulianCurrie/CwC_React_Native/tree/redux_tutorial)
+* [React Navigation (v5)](https://github.com/JulianCurrie/CwC_React_Native/tree/react_navigation_v5)
 
 ## Prerequisites
 Knowledge of fundamental programming concepts is required. These include things like conditional statements, loops, lists manipulation, etc. I won't be covering general programming concepts so some programming experience is expected.
