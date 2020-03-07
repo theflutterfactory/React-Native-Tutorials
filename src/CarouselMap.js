@@ -15,7 +15,7 @@ import { request, PERMISSIONS } from 'react-native-permissions';
 import Geolocation from '@react-native-community/geolocation';
 import Carousel from 'react-native-snap-carousel';
 
-export default class Playground extends Component {
+export default class CarouselMap extends Component {
 
   static navigationOptions = {
     title: 'San Francisco',

@@ -14,8 +14,11 @@ export default class Home extends Component {
         <Text style={styles.body}>This is the master branch. As you can see, there's not much here.
       Please checkout the other branches for code related to specific tutorials/videos</Text>
         <Button
-          title='Go to Playground'
-          onPress={() => { this.props.navigation.navigate('MapScreen') }} />
+          title='Go to Carousel Map'
+          onPress={() => { this.props.navigation.navigate('CarouselMap') }} />
+        <Button
+          title='Go to Heat Map'
+          onPress={() => { this.props.navigation.navigate('HeatMapComponent') }} />
       </View>
     );
   }
