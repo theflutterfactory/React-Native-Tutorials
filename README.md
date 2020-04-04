@@ -18,14 +18,17 @@ Knowledge of fundamental programming concepts is required. These include things 
 3. Make sure you have the Metro bundler running with 'react-native start'
 4. **iOS**: On a mac, run the app in a simulator with 'react-native run-ios --simulator="YOUR DEVICE NAME". You may have to set up a new device in Xcode.
 5. **Android**: Make sure your Android Home path is setup correctly and run the app in the emulator with 'react native run-android'
+  *export ANDROID_HOME=/Library/Android/sdk (or wherever your sdk is located)
+  *export PATH=$PATH:$ANDROID_HOME/tools 
+  *export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-You may get errors switching between brances. Make sure you try these options first:
-* Reinstall cocoa pods in the /ios folder with 'pod install'
-* Resintall packages in the top level folder with 'npm install'
-* You may have to delete the Podfile.lock and/or the package-lock.json file before running the commands above.
+You will probably get errors switching between branches. Make sure you run these commands before running the code:
+* Install project packages in the top level folder with 'npm install' in your terminal
+* cd into the 'ios; folder and run 'pod install' in the terminal.
+* If you still get package related errors, try deleting the Podfile.lock and/or the package-lock.json file before running the commands above.
 
 ## Contributions
-You may fork this repo if you wish, but I am not accepting external contributions at this time.
+You can fork this repo if you wish, but I am not accepting external contributions at this time.
 
 ## Authors
 * **Julian Currie**
