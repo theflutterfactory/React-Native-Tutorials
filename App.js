@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Feed from './src/feed';
 import Detail from './src/detail';
 
@@ -10,19 +10,37 @@ import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
 import Tab3 from './src/screens/tabs/Tab3';
 
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme
+} from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Appearance, useColorScheme, AppearanceProvider } from 'react-native-appearance';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();;
 
-export default class App extends Component {
+App = () => {
+
+  const colorScheme = useColorScheme();
+
+  const MyTheme = {
+    dark: false,
+    colors: {
+      primary: 'white',
+      background: 'white',
+      card: '#65509f',
+      text: 'white',
+      border: 'green',
+    },
+  }
 
   createHomeStack = () =>
     <Stack.Navigator>
@@ -30,18 +48,14 @@ export default class App extends Component {
         name="Home"
         children={this.createDrawer}
         options={{
-          title: "My Feed",
-          headerStyle: { backgroundColor: "black" },
-          headerTintColor: "white"
+          title: "Navigation Hooks & Themes"
         }}
       />
       <Stack.Screen
         name="Detail"
         component={Detail}
         options={{
-          title: "Detail Screen",
-          headerStyle: { backgroundColor: "blue" },
-          headerTintColor: "white"
+          title: "Detail Screen"
         }}
       />
       <Stack.Screen name="Bottom Tabs" children={this.createBottomTabs} />
@@ -100,11 +114,13 @@ export default class App extends Component {
     </MaterialBottomTabs.Navigator>
   }
 
-  render() {
-    return (
-      <NavigationContainer>
+  return (
+    <AppearanceProvider>
+      <NavigationContainer theme={colorScheme == 'dark' ? DarkTheme : MyTheme}>
         {this.createHomeStack()}
       </NavigationContainer>
-    );
-  }
+    </AppearanceProvider>
+  );
 }
+
+export default App;
