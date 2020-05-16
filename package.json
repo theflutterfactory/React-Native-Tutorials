@@ -18,6 +18,7 @@
     "react-native-elements": "^2.0.0",
     "react-native-firebase": "^5.6.0",
     "react-native-gesture-handler": "^1.6.1",
+    "react-native-get-random-values": "^1.4.0",
     "react-native-image-picker": "^2.3.1",
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^1.0.0",
