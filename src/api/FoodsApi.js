@@ -1,5 +1,5 @@
 import firebase from 'react-native-firebase';
-import uuid4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 
 export function login({ email, password }) {
   firebase.auth().signInWithEmailAndPassword(email, password)
@@ -73,7 +73,7 @@ export function uploadFood(food, onFoodUploaded, { updating }) {
     const fileExtension = food.imageUri.split('.').pop();
     console.log("EXT: " + fileExtension);
 
-    var uuid = uuid4();
+    var uuid = uuidv4();
 
     const fileName = `${uuid}.${fileExtension}`;
     console.log(fileName);

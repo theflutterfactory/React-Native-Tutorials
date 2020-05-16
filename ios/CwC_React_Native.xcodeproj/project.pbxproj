@@ -31,7 +31,7 @@
 		71C52C0A00FF4201BD7ACEB5 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AECEC5CAFA5436AA4FA7B5B /* Octicons.ttf */; };
 		7D604AD1D4B4450D888EDD06 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 942F40037ED9442BBD9D8FA5 /* FontAwesome.ttf */; };
 		880992BE22CFC3CF00A19613 /* libReact-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880992BD22CFC3CF00A19613 /* libReact-Core.a */; };
-		884D856822F4885D00722FB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 884D856722F4885D00722FB3 /* GoogleService-Info.plist */; };
+		8812B09B24707AA4003888C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8812B09A24707AA3003888C7 /* GoogleService-Info.plist */; };
 		8CF46FFE171209B4E8EC91BC /* libPods-CwC_React_NativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A17F903678A7BEC268F8A6 /* libPods-CwC_React_NativeTests.a */; };
 		B7123F2F74C244DF82BBC635 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FD1934597984493A673A605 /* MaterialIcons.ttf */; };
 		E20C8DB431B27183C5EF4963 /* libPods-CwC_React_Native-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB647BF3BFF0FD46DD338F3 /* libPods-CwC_React_Native-tvOS.a */; };
@@ -88,7 +88,7 @@
 		84644F799D0F56E9848BF4B3 /* Pods-CwC_React_Native.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native.release.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native/Pods-CwC_React_Native.release.xcconfig"; sourceTree = "<group>"; };
 		8507D2B686101977BB400AD6 /* Pods-CwC_React_Native-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native-tvOSTests/Pods-CwC_React_Native-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		880992BD22CFC3CF00A19613 /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		884D856722F4885D00722FB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../CWC Firebase Config/ios/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8812B09A24707AA3003888C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Firebase Config/CWC/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D03002DFBF94BA792007C01 /* Pods-CwC_React_Native-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CwC_React_Native-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CwC_React_Native-tvOSTests/Pods-CwC_React_Native-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F2132029C6D4EB58FC4CA28 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		942F40037ED9442BBD9D8FA5 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				884D856722F4885D00722FB3 /* GoogleService-Info.plist */,
+				8812B09A24707AA3003888C7 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* CwC_React_Native */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CwC_React_NativeTests */,
@@ -423,7 +423,7 @@
 				EBC393105CE943209B19B25A /* FontAwesome5_Regular.ttf in Resources */,
 				49A82F63E1AC4575B0BCB1D0 /* FontAwesome5_Solid.ttf in Resources */,
 				4EC006DA1B0541F886281EEE /* Fontisto.ttf in Resources */,
-				884D856822F4885D00722FB3 /* GoogleService-Info.plist in Resources */,
+				8812B09B24707AA4003888C7 /* GoogleService-Info.plist in Resources */,
 				3D0DD0FDFAD34AF3A94AF9C2 /* Foundation.ttf in Resources */,
 				4D36A2FF063D4A0181D076B5 /* Ionicons.ttf in Resources */,
 				301B10A0DC5E4638A04D9E34 /* MaterialCommunityIcons.ttf in Resources */,
