@@ -13,7 +13,8 @@ import Tab3 from './src/screens/tabs/Tab3';
 import {
   NavigationContainer,
   DefaultTheme,
-  DarkTheme
+  DarkTheme,
+  DrawerActions
 } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -43,13 +44,21 @@ App = () => {
   }
 
   createHomeStack = () =>
-    <Stack.Navigator>
+    <Stack.Navigator    >
       <Stack.Screen
         name="Home"
         children={this.createDrawer}
-        options={{
-          title: "Navigation Hooks & Themes"
-        }}
+        options={({ navigation }) => ({
+          title: "React Navigation",
+          headerLeft: () =>
+            <Icon
+              onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+              style={[{ color: 'white', marginLeft: 8 }]}
+              size={24}
+              name={'menu'}
+            />
+        })
+        }
       />
       <Stack.Screen
         name="Detail"
