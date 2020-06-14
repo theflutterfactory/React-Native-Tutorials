@@ -9,7 +9,7 @@ export default class Playground extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Hello</Text>
+        <Text style={styles.title}>Hello World!</Text>
       </View>
     );
   }
