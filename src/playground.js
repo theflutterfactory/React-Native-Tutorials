@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
   Text
 } from 'react-native';
 
-export default class Playground extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Hello World!</Text>
-      </View>
-    );
-  }
-};
+export default Playground = () =>
+  <View style={styles.container}>
+    <Text style={styles.title}>Hello World!</Text>
+  </View>
 
 const styles = StyleSheet.create({
   container: {
