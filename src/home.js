@@ -7,7 +7,7 @@ import {
   Image
 } from 'react-native';
 
-export default Home = () =>
+export default Home = ({ navigation }) =>
   <View style={styles.container}>
     <Image
       source={require('./assets/cc_logo.png')}
@@ -18,7 +18,7 @@ export default Home = () =>
       Please checkout the other branches for code related to specific tutorials/videos</Text>
     <Button
       title='Go to Playground'
-      onPress={() => { this.props.navigation.navigate('Playground') }} />
+      onPress={() => navigation.navigate('Playground')} />
   </View>
 
 const styles = StyleSheet.create({
