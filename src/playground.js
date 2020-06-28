@@ -1,22 +1,16 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native';
+import { Title } from './styles/text'
+import { Container } from './styles/wrapper'
+import { RoundedInput } from './styles/input'
+import { RoundedButton } from './styles/buttons'
 
 export default Playground = () =>
-  <View style={styles.container}>
-    <Text style={styles.title}>Hello World!</Text>
-  </View>
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 40
-  },
-});
+  <Container>
+    <Title>Login</Title>
+    <RoundedInput placeholder='Username' />
+    <RoundedInput password placeholder='Password' />
+    <RoundedButton
+      title='SUBMIT'
+      width={'80%'}
+    />
+  </Container>

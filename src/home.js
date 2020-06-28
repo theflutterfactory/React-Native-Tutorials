@@ -1,43 +1,25 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  Button,
-  Image
-} from 'react-native';
+
+import { Container } from './styles/wrapper'
+import { Title, ContentText } from './styles/text'
+import { CustomImage } from './styles/image'
+import { RoundedButton } from './styles/buttons'
 
 export default Home = ({ navigation }) =>
-  <View style={styles.container}>
-    <Image
+  <Container >
+    <CustomImage
       source={require('./assets/cc_logo.png')}
-      style={styles.image}
     />
-    <Text style={styles.title}>Coding with Curry</Text>
-    <Text style={styles.body}>This is the master branch. As you can see, there's not much here.
-      Please checkout the other branches for code related to specific tutorials/videos</Text>
-    <Button
-      title='Go to Playground'
+    <Title>Coding with Curry</Title>
+    <ContentText>
+      Styled Component is a very useful tool to add to your toolbox
+    </ContentText>
+    <ContentText>
+      {
+        `- Creating components with their owned contained style\n- Passing Props\n-Theming Components`
+      }
+    </ContentText>
+    <RoundedButton
+      title='LOGIN'
       onPress={() => navigation.navigate('Playground')} />
-  </View>
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 16,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 32,
-    marginBottom: 32,
-    marginTop: 32
-  },
-  body: {
-    fontSize: 22
-  },
-  image: {
-    height: 100,
-    width: 100
-  }
-});
+  </Container>
