@@ -20,11 +20,11 @@ Feed = () => {
           ios:
             <Button
               title='Go to Feed Item'
-              onPress={() => navigation.navigate('Detail', { screenName: "My Detail Screen" })}
+              onPress={() => navigation.navigate('Detail', { foodName: "My Detail Screen" })}
             />,
           android:
             <TouchableOpacity
-              onPress={() => navigation.navigate('Detail', { screenName: "My Detail Screen" })}>
+              onPress={() => navigation.navigate('Detail', { foodName: "My Detail Screen" })}>
               <Text style={styles.androidButtonText}>Go to FeedItem</Text>
             </TouchableOpacity>
         })

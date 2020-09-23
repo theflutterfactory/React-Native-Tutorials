@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, Button, TouchableOpacity } from 'react-native';
 import {
   useNavigation,
@@ -13,11 +13,12 @@ Detail = () => {
 
   const navigation = useNavigation();
   const route = useRoute();
-  const index = useNavigationState(state => state.index);
+  // const index = useNavigationState(state => console.log(state));
 
-  console.log(`Screen index: ${index}`);
+  console.log(route)
 
-  useFocusEffect(
+
+  /*useFocusEffect(
     React.useCallback(() => {
       fetch('https://restcountries.eu/rest/v2/capital/tallinn')
         .then(response => {
@@ -28,11 +29,11 @@ Detail = () => {
       return () => console.log("lost focus")
     }
     )
-  )
+  )*/
 
   return (
     <View style={styles.center}>
-      <Text style={styles.title}>{route.params.screenName}</Text>
+      <Text style={styles.title}>{route.params.foodName}</Text>
       {
         Platform.select({
           ios:
