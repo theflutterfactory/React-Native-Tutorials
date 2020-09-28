@@ -39,12 +39,12 @@ Detail = () => {
           ios:
             <Button
               title='View Bottom Tabs'
-              onPress={() => navigation.navigate('Bottom Tabs', { name: "param 1" })}
+              onPress={() => navigation.navigate('BottomTabs', { name: "param 1" })}
             />,
           android:
             <TouchableOpacity
               style={{ marginBottom: 16 }}
-              onPress={() => navigation.navigate('Bottom Tabs', { name: "param 1" })}>
+              onPress={() => navigation.navigate('BottomTabs', { name: "param 1" })}>
               <Text style={{ color: 'blue', fontSize: 20 }}>View Bottom Tabs</Text>
             </TouchableOpacity>
         })
@@ -54,12 +54,12 @@ Detail = () => {
           ios:
             <Button
               title='View Top Tabs'
-              onPress={() => navigation.navigate('Top Tabs', { name: "param 2" })}
+              onPress={() => navigation.navigate('TopTabs', { name: "param 2" })}
             />,
           android:
             <TouchableOpacity
               style={{ marginBottom: 16 }}
-              onPress={() => navigation.navigate('Top Tabs', { name: "param 2" })}>
+              onPress={() => navigation.navigate('TopTabs', { name: "param 2" })}>
               <Text style={{ color: 'blue', fontSize: 20 }}>View Top Tabs</Text>
             </TouchableOpacity>
         })
