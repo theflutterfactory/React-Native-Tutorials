@@ -2,9 +2,9 @@ import React from 'react';
 import Feed from './src/feed';
 import Detail from './src/detail';
 
-import Screen1 from './src/screens/drawer/screen1';
-import Screen2 from './src/screens/drawer/screen2';
-import Screen3 from './src/screens/drawer/screen3';
+import Contacts from './src/screens/drawer/Contacts';
+import Favorites from './src/screens/drawer/Favorites';
+import Settings from './src/screens/drawer/Settings';
 
 import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
@@ -16,6 +16,7 @@ import {
   DarkTheme,
   DrawerActions
 } from '@react-navigation/native';
+
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -26,7 +27,7 @@ import { Appearance, useColorScheme, AppearanceProvider } from 'react-native-app
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
-const MaterialTopTabs = createMaterialTopTabNavigator();;
+const MaterialTopTabs = createMaterialTopTabNavigator();
 
 App = () => {
 
@@ -44,9 +45,9 @@ App = () => {
   }
 
   createHomeStack = () =>
-    <Stack.Navigator    >
+    <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name="Feed"
         children={this.createDrawer}
         options={({ navigation }) => ({
           title: "React Navigation",
@@ -67,34 +68,34 @@ App = () => {
           title: "Detail Screen"
         }}
       />
-      <Stack.Screen name="Bottom Tabs" children={this.createBottomTabs} />
-      <Stack.Screen name="Top Tabs" children={this.createTopTabs} />
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="TopTabs" children={this.createTopTabs} />
     </Stack.Navigator>
 
   createDrawer = () =>
     <Drawer.Navigator>
       <Drawer.Screen name="Feed" component={Feed} />
-      <Drawer.Screen name="Contacts" component={Screen1} />
-      <Drawer.Screen name="Favorites" component={Screen2} />
-      <Drawer.Screen name="Settings" component={Screen3} />
+      <Drawer.Screen name="Contacts" component={Contacts} />
+      <Drawer.Screen name="Favorites" component={Favorites} />
+      <Drawer.Screen name="Settings" component={Settings} />
     </Drawer.Navigator>
 
   createTopTabs = (props) => {
     return <MaterialTopTabs.Navigator>
       <MaterialTopTabs.Screen
-        name="Tab 1"
+        name="Tab1"
         component={Tab1}
         options={{ title: props.route.params.name }}
       />
-      <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
-      <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
+      <MaterialTopTabs.Screen name="Tab2" component={Tab2} />
+      <MaterialTopTabs.Screen name="Tab3" component={Tab3} />
     </MaterialTopTabs.Navigator>
   }
 
-  createBottomTabs = () => {
+  BottomTabs = () => {
     return <MaterialBottomTabs.Navigator>
       <MaterialBottomTabs.Screen
-        name="Tab 1"
+        name="Tab1"
         style={{ marginBottom: 16 }}
         component={Tab1}
         options={{
@@ -104,7 +105,7 @@ App = () => {
           ),
         }}
       />
-      <MaterialBottomTabs.Screen name="Tab 2" component={Tab2}
+      <MaterialBottomTabs.Screen name="Tab2" component={Tab2}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: () => (
@@ -112,7 +113,7 @@ App = () => {
           )
         }}
       />
-      <MaterialBottomTabs.Screen name="Tab 3" component={Tab3}
+      <MaterialBottomTabs.Screen name="Tab3" component={Tab3}
         options={{
           tabBarLabel: 'Map',
           tabBarIcon: () => (
