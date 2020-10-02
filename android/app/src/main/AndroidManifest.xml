@@ -14,10 +14,31 @@
         android:name=".MainActivity"
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-        android:windowSoftInputMode="adjustResize">
+        android:windowSoftInputMode="adjustResize"
+        android:launchMode="singleTask">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:scheme="recipes" />
+          <data android:host='feed'/>
+          <data android:host='food'/>
+          <data android:host='favorites'/>
+          <data android:host='bottom_tabs'/>
+          <data android:host='top_tabs'/>
+          <data android:host='contact'/>
+          <data android:host='bTab1'/>
+          <data android:host='bTab2'/>
+          <data android:host='bTab3'/>
+          <data android:host='tTab1'/>
+          <data android:host='tTab2'/>
+          <data android:host='tTab3'/>
+          <data android:host='favorites'/>
+          <data android:host='settings'/>
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

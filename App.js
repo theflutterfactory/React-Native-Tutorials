@@ -12,7 +12,6 @@ import Tab3 from './src/screens/tabs/Tab3';
 
 import {
   NavigationContainer,
-  DefaultTheme,
   DarkTheme,
   DrawerActions
 } from '@react-navigation/native';
@@ -22,7 +21,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Appearance, useColorScheme, AppearanceProvider } from 'react-native-appearance';
+import { useColorScheme, AppearanceProvider } from 'react-native-appearance';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -42,6 +41,60 @@ App = () => {
       text: 'white',
       border: 'green',
     },
+  }
+
+  const linking = {
+    prefixes: ['recipes://'],
+    config: {
+      screens: {
+        Feed: 'feed/:title',
+        Detail: 'detail/:foodName',
+        BottomTabs: {
+          path: 'bottom_tabs',
+          screens: {
+            Tab1: {
+              path: 'bTab1',
+              exact: true
+            },
+            Tab2: {
+              path: 'bTab2',
+              exact: true
+            },
+            Tab3: {
+              path: 'bTab3',
+              exact: true
+            }
+          }
+        },
+        TopTabs: {
+          path: 'top_tabs',
+          screens: {
+            Tab1: {
+              path: 'tTab1',
+              exact: true
+            },
+            Tab2: {
+              path: 'tTab2',
+              exact: true
+            },
+            Tab3: {
+              path: 'tTab3',
+              exact: true
+            }
+          }
+        },
+        Favorites: 'favorites/:user/:id',
+        Contacts: 'contacts/:user?',
+        Settings: {
+          path: 'settings/:color/:age/:isVerified',
+          parse: {
+            age: Number,
+            isVerified: Boolean,
+            color: (color) => `color-${color}`
+          }
+        }
+      }
+    }
   }
 
   createHomeStack = () =>
@@ -126,7 +179,9 @@ App = () => {
 
   return (
     <AppearanceProvider>
-      <NavigationContainer theme={colorScheme == 'dark' ? DarkTheme : MyTheme}>
+      <NavigationContainer theme={colorScheme == 'dark' ? DarkTheme : MyTheme}
+        linking={linking}
+      >
         {this.createHomeStack()}
       </NavigationContainer>
     </AppearanceProvider>
