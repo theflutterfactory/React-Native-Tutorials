@@ -1,19 +1,19 @@
-# Coding with Curry - React Native
-Welcome to the React Native repo for Coding with Curry. Topics Covered are added to their own branches and will be updated periodically as needed.
+# Cheetah Coding - React Native
+Welcome to the React Native repo for Cheetah Coding. Topics Covered are added to their own branches and will be updated periodically as needed.
 
 ## Topics / Branches
-* [AsyncStorage](https://github.com/JulianCurrie/CwC_React_Native/tree/async_storage)
-* [Hooks & Context](https://github.com/JulianCurrie/CwC_React_Native/tree/context_api_demo)
-* [Firebase](https://github.com/JulianCurrie/CwC_React_Native/tree/firebase_basics)
-* [React Native Maps](https://github.com/JulianCurrie/CwC_React_Native/tree/react-native-maps_example)
-* [Redux](https://github.com/JulianCurrie/CwC_React_Native/tree/redux_tutorial)
-* [React Navigation (v5)](https://github.com/JulianCurrie/CwC_React_Native/tree/react_navigation_v5)
+* [AsyncStorage](https://github.com/cheetahcoding/CwC_React_Native/tree/async_storage)
+* [Hooks & Context](https://github.com/cheetahcoding/CwC_React_Native/tree/context_api_demo)
+* [Firebase](https://github.com/cheetahcoding/CwC_React_Native/tree/firebase_basics)
+* [React Native Maps](https://github.com/cheetahcoding/CwC_React_Native/tree/react-native-maps_example)
+* [Redux](https://github.com/cheetahcoding/CwC_React_Native/tree/redux_tutorial)
+* [React Navigation (v5)](https://github.com/cheetahcoding/CwC_React_Native/tree/react_navigation_v5)
 
 ## Prerequisites
 Knowledge of fundamental programming concepts is required. These include things like conditional statements, loops, lists manipulation, etc. I won't be covering general programming concepts so some programming experience is expected.
 
 ## Installing (Using a terminal)
-1. Copy the repo to your local machine with 'git clone https://github.com/JulianCurrie/CwC_React_Native.git'
+1. Copy the repo to your local machine with 'git clone https://github.com/cheetahcoding/CwC_React_Native.git'
 2. cd into the top level folder
 3. Make sure you have the Metro bundler running with 'react-native start'
 4. **iOS**: On a mac, run the app in a simulator with 'react-native run-ios --simulator="YOUR DEVICE NAME". You may have to set up a new device in Xcode.
