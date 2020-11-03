@@ -1,5 +1,5 @@
 # Cheetah Coding - React Native
-Welcome to the React Native repo for Cheetah Coding. Topics Covered are added to their own branches and will be updated periodically as needed.
+Welcome to the React Native repo for the [Cheetah Coding Youtube Channel](https://www.youtube.com/cheetahcoding??sub_confirmation=1). Topics Covered are added to their own branches and will be updated periodically as needed.
 
 ## Topics / Branches
 * [AsyncStorage](https://github.com/cheetahcoding/CwC_React_Native/tree/async_storage)
