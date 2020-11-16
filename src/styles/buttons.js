@@ -3,8 +3,6 @@ import React from 'react';
 
 const RoundedTouchableOpacity = styled.TouchableOpacity`
   height: 60px;
-  border-bottom-left-radius: 30px;
-  border-top-right-radius: 30px;
   width: ${props => props.width || '180px'};
   justify-content: center;
   align-items: center;
@@ -14,7 +12,7 @@ const RoundedTouchableOpacity = styled.TouchableOpacity`
 
 const ButtonText = styled.Text`
   color: ${props => props.theme.colors.textLight || 'white'};
-  font-size: ${props => props.size || '16px'};
+  font-size: ${props => props.size || '20px'};
 `
 
 export const RoundedButton = ({ onPress, title, fontSize, width }) =>

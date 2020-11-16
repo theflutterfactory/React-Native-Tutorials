@@ -13,6 +13,6 @@ export const RoundedInput = styled.TextInput.attrs(props => ({
   height: 60px;
   margin: 16px;
   border-bottom-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
     padding: 16px;
 `
