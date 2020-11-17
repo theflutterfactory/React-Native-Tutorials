@@ -4,7 +4,7 @@ export const Title = styled.Text`
   font-size: 40px;
   color: ${props => props.theme.colors.textLight || 'black'};
   text-align: center;
-  font-family: 'serif';
+  font-family: ${props => props.fontFamily};
   margin: 16px;
 `
 
