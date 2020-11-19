@@ -38,6 +38,7 @@ export default App = () =>
           component={Playground}
           options={{
             headerTintColor: theme.colors.textLight,
+            headerTitle: 'Cheetah Coding',
             headerStyle: { backgroundColor: theme.colors.dark }
           }} />
       </Stack.Navigator>
