@@ -10,14 +10,11 @@ export default Home = ({ navigation }) =>
     <CustomImage
       source={require('./assets/cc_logo.png')}
     />
-    <Title>Coding with Curry</Title>
+    <Title>Cheetah Coding</Title>
     <ContentText>
-      Styled Component is a very useful tool to add to your toolbox
-    </ContentText>
-    <ContentText>
-      {
-        `- Creating components with their owned contained style\n- Passing Props\n-Theming Components`
-      }
+      This is the master branch. As you can you, there's not much here.
+      This branch uses Styled Components. Styled Components is a very useful tool to add to your toolbox.
+      If you're not familiar with that library, checkout the Styled Components video on the channel.
     </ContentText>
     <RoundedButton
       title='LOGIN'

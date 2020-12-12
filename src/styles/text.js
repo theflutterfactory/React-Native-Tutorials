@@ -8,7 +8,7 @@ export const Title = styled.Text`
 `
 
 export const ContentText = styled.Text`
-  font-size: 26px;
+  font-size: 18px;
   color: ${props => props.theme.colors.textLight || 'black'};
   margin: 16px;
 
