@@ -1,11 +1,21 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import FoodForm from './src/foodForm';
 import FoodList from './src/foodList';
+import { NavigationContainer } from '@react-navigation/native';
 
-const AppStack = createStackNavigator({
-  FoodForm: FoodForm,
-  FoodList: FoodList
-});
+const Stack = createStackNavigator();
 
-export default createAppContainer(AppStack);
+export default AppStack = () =>
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="FoodForm"
+        component={FoodForm}
+      />
+      <Stack.Screen
+        name="FoodList"
+        component={FoodList}
+      />
+    </Stack.Navigator>
+  </NavigationContainer>
