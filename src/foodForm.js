@@ -4,7 +4,8 @@ import {
   View,
   TextInput,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native'
 import { connect } from 'react-redux';
 import { addFood } from './actions/food';
@@ -26,6 +27,10 @@ class FoodForm extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+          style={styles.image}
+          source={require('./assets/logo.png')}
+        />
         <Text style={styles.title}>Redux</Text>
         <TextInput
           value={this.state.food}
@@ -60,16 +65,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   title: {
-    fontSize: 64,
-    marginBottom: 48
+    fontSize: 48,
+    marginBottom: 30
   },
   foodInput: {
-    fontSize: 32,
+    fontSize: 24,
     marginBottom: 32,
     borderWidth: 1,
     padding: 8,
     width: '80%',
-    borderRadius: 10,
+  },
+  image: {
+    width: 120,
+    height: 120,
+    borderColor: 'orange',
+    borderWidth: 2,
+    borderRadius: 100,
   }
 });
 

@@ -12,6 +12,7 @@ export default AppStack = () =>
       <Stack.Screen
         name="FoodForm"
         component={FoodForm}
+        options={{ title: 'Cheetah Coding' }}
       />
       <Stack.Screen
         name="FoodList"
