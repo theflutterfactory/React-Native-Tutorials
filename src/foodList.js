@@ -1,43 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   FlatList
 } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements'
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteFood } from './actions/food';
 
-class FoodList extends Component {
+const FoodList = () => {
 
-  static navigationOptions = {
-    title: 'Food List',
-    headerTintColor: 'white',
-    headerStyle: {
-      backgroundColor: '#845cc3',
-    },
-  };
+  const dispatch = useDispatch();
 
-  render() {
-    return (
-      <FlatList style={styles.listContainer}
-        data={this.props.foods}
-        keyExtractor={(item, index) => item.key.toString()}
-        renderItem={
-          (data) =>
-            <ListItem
-              title={data.item.name}
-              bottomDivider
-              rightIcon={<Icon
-                name='delete'
-                size={36}
-                onPress={() => this.props.delete(data.item.key)} />
-              }
-            />
-        }
-      />
-    );
-  }
-};
+  const deleteCurrent = (key) => dispatch(deleteFood(key))
+
+  const foods = useSelector(state => state.foodReducer.foodList)
+
+  return (
+    <FlatList style={styles.listContainer}
+      data={foods}
+      keyExtractor={(item, index) => item.key.toString()}
+      renderItem={
+        (data) =>
+          <ListItem
+            title={data.item.name}
+            bottomDivider
+            rightIcon={<Icon
+              name='delete'
+              size={36}
+              onPress={() => deleteCurrent(data.item.key)} />
+            }
+          />
+      }
+    />
+  );
+}
 
 const styles = StyleSheet.create({
   listContainer: {
@@ -49,18 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    foods: state.foodReducer.foodList
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    delete: (key) => dispatch(deleteFood(key))
-  }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(FoodList);
+export default FoodList;
