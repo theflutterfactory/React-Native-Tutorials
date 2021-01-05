@@ -37,7 +37,7 @@ const FoodList = () => {
 
 const styles = StyleSheet.create({
   listContainer: {
-    backgroundColor: '#dce2ff',
+    backgroundColor: '#212121',
     padding: 16
   },
   listText: {

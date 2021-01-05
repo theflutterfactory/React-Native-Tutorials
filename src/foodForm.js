@@ -43,7 +43,7 @@ const FoodForm = ({ navigation }) => {
         style={{ marginBottom: 16 }}
         onPress={() =>
           navigation.navigate('FoodList')}>
-        <Text style={{ fontSize: 22 }}>Go to FoodList</Text>
+        <Text style={{ fontSize: 22, color: 'white' }}>Go to FoodList</Text>
       </TouchableOpacity>
     </View>
   );
@@ -52,20 +52,24 @@ const FoodForm = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 16,
+    backgroundColor: '#212121',
     alignItems: 'center',
     justifyContent: 'center'
   },
   title: {
     fontSize: 48,
-    marginBottom: 30
+    marginBottom: 30,
+    marginTop: 16,
+    color: 'white'
   },
   foodInput: {
     fontSize: 24,
     marginBottom: 32,
     borderWidth: 1,
-    padding: 8,
+    padding: 12,
     width: '80%',
+    borderRadius: 10,
+    backgroundColor: 'white'
   },
   image: {
     width: 120,

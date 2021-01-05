@@ -12,11 +12,23 @@ export default AppStack = () =>
       <Stack.Screen
         name="FoodForm"
         component={FoodForm}
-        options={{ title: 'Cheetah Coding' }}
+        options={{
+          title: 'Cheetah Coding',
+          headerTintColor: 'orange',
+          headerStyle: {
+            backgroundColor: 'black'
+          }
+        }}
       />
       <Stack.Screen
         name="FoodList"
         component={FoodList}
+        options={{
+          headerTintColor: 'orange',
+          headerStyle: {
+            backgroundColor: 'black'
+          }
+        }}
       />
     </Stack.Navigator>
   </NavigationContainer>
