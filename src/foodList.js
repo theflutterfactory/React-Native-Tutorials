@@ -4,20 +4,15 @@ import {
   FlatList
 } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements'
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteFood } from './actions/food';
+import { useFoodList } from './hooks/useFoodList';
 
 const FoodList = () => {
 
-  const dispatch = useDispatch();
-
-  const deleteCurrent = (key) => dispatch(deleteFood(key))
-
-  const foods = useSelector(state => state.foodReducer.foodList)
+  const foodHook = useFoodList();
 
   return (
     <FlatList style={styles.listContainer}
-      data={foods}
+      data={foodHook.foodList}
       keyExtractor={(item, index) => item.key.toString()}
       renderItem={
         (data) =>
@@ -27,7 +22,7 @@ const FoodList = () => {
             rightIcon={<Icon
               name='delete'
               size={36}
-              onPress={() => deleteCurrent(data.item.key)} />
+              onPress={() => foodHook.deleteFood(data.item.key)} />
             }
           />
       }

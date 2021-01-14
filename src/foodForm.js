@@ -7,16 +7,17 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native'
-import { useDispatch } from 'react-redux';
-import { addFood } from './actions/food';
+import { useRecoilValue } from 'recoil';
+import { listSize } from './atoms/foodState';
+import { useFoodList } from './hooks/useFoodList';
 
 const FoodForm = ({ navigation }) => {
 
   const [food, setFood] = useState('')
 
-  const dispatch = useDispatch();
+  const foodHook = useFoodList();
 
-  const submitFood = (food) => dispatch(addFood(food))
+  const foodListSize = useRecoilValue(listSize)
 
   return (
     <View style={styles.container}>
@@ -24,7 +25,7 @@ const FoodForm = ({ navigation }) => {
         style={styles.image}
         source={require('./assets/logo.png')}
       />
-      <Text style={styles.title}>Redux</Text>
+      <Text style={styles.title}>Recoil Tutorial</Text>
       <TextInput
         value={food}
         placeholder='Name'
@@ -34,7 +35,7 @@ const FoodForm = ({ navigation }) => {
       <TouchableOpacity
         style={{ marginBottom: 16 }}
         onPress={() => {
-          submitFood(food)
+          foodHook.addFood(food)
           setFood('')
         }}>
         <Text style={{ fontSize: 22, color: '#5fc9f8' }}>Submit</Text>
@@ -43,7 +44,7 @@ const FoodForm = ({ navigation }) => {
         style={{ marginBottom: 16 }}
         onPress={() =>
           navigation.navigate('FoodList')}>
-        <Text style={{ fontSize: 22, color: 'white' }}>Go to FoodList</Text>
+        <Text style={{ fontSize: 22, color: 'white' }}>Go to FoodList ({foodListSize})</Text>
       </TouchableOpacity>
     </View>
   );
