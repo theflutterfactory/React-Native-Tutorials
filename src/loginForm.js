@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -7,16 +7,8 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native'
-import { useDispatch } from 'react-redux';
-import { addFood } from './actions/food';
 
-const FoodForm = ({ navigation }) => {
-
-  const [food, setFood] = useState('')
-
-  const dispatch = useDispatch();
-
-  const submitFood = (food) => dispatch(addFood(food))
+const LoginForm = () => {
 
   return (
     <View style={styles.container}>
@@ -24,26 +16,20 @@ const FoodForm = ({ navigation }) => {
         style={styles.image}
         source={require('./assets/logo.png')}
       />
-      <Text style={styles.title}>Redux</Text>
+      <Text style={styles.title}>React Hook Form</Text>
       <TextInput
-        value={food}
         placeholder='Name'
-        style={styles.foodInput}
-        onChangeText={(food) => setFood(food)}
+        style={styles.input}
+        onChangeText={() => { }}
+      />
+      <TextInput
+        placeholder='Email'
+        style={styles.input}
+        onChangeText={() => { }}
       />
       <TouchableOpacity
-        style={{ marginBottom: 16 }}
-        onPress={() => {
-          submitFood(food)
-          setFood('')
-        }}>
+        onPress={() => { }}>
         <Text style={{ fontSize: 22, color: '#5fc9f8' }}>Submit</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{ marginBottom: 16 }}
-        onPress={() =>
-          navigation.navigate('FoodList')}>
-        <Text style={{ fontSize: 22, color: 'white' }}>Go to FoodList</Text>
       </TouchableOpacity>
     </View>
   );
@@ -57,16 +43,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   title: {
-    fontSize: 48,
+    fontSize: 36,
     marginBottom: 30,
     marginTop: 16,
     color: 'white'
   },
-  foodInput: {
+  error: {
+    fontSize: 18,
+    color: 'red',
+    marginBottom: 16,
+    marginLeft: 16,
+    marginRight: 16
+  },
+  input: {
     fontSize: 24,
-    marginBottom: 32,
     borderWidth: 1,
     padding: 12,
+    marginBottom: 16,
     width: '80%',
     borderRadius: 10,
     backgroundColor: 'white'
@@ -80,4 +73,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default FoodForm;
+export default LoginForm;
