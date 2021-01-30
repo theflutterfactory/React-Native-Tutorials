@@ -13,9 +13,9 @@ export default AppStack = () =>
         component={LoginForm}
         options={{
           title: 'Cheetah Coding',
-          headerTintColor: 'orange',
+          headerTintColor: 'white',
           headerStyle: {
-            backgroundColor: 'black'
+            backgroundColor: '#c01c00'
           }
         }}
       />

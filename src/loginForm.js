@@ -29,7 +29,7 @@ const LoginForm = () => {
       />
       <TouchableOpacity
         onPress={() => { }}>
-        <Text style={{ fontSize: 22, color: '#5fc9f8' }}>Submit</Text>
+        <Text style={styles.button}>Submit</Text>
       </TouchableOpacity>
     </View>
   );
@@ -38,7 +38,7 @@ const LoginForm = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#212121',
+    backgroundColor: '#282828',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -49,17 +49,17 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   error: {
-    fontSize: 18,
+    fontSize: 16,
     color: 'red',
+    marginTop: 16,
     marginBottom: 16,
-    marginLeft: 16,
-    marginRight: 16
+    marginLeft: 36,
+    marginRight: 36
   },
   input: {
-    fontSize: 24,
+    fontSize: 18,
     borderWidth: 1,
     padding: 12,
-    marginBottom: 16,
     width: '80%',
     borderRadius: 10,
     backgroundColor: 'white'
@@ -70,6 +70,16 @@ const styles = StyleSheet.create({
     borderColor: 'orange',
     borderWidth: 2,
     borderRadius: 100,
+  },
+  button: {
+    fontSize: 20,
+    color: 'white',
+    width: 120,
+    marginTop: 8,
+    borderRadius: 10,
+    backgroundColor: '#c01c00',
+    padding: 8,
+    textAlign: 'center'
   }
 });
 
