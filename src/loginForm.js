@@ -1,17 +1,17 @@
 import React from 'react';
 import {
   StyleSheet,
-  View,
   TextInput,
   Text,
   TouchableOpacity,
-  Image
+  Image,
+  ScrollView
 } from 'react-native'
 
 const LoginForm = () => {
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Image
         style={styles.image}
         source={require('./assets/logo.png')}
@@ -31,7 +31,7 @@ const LoginForm = () => {
         onPress={() => { }}>
         <Text style={styles.button}>Submit</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 }
 
