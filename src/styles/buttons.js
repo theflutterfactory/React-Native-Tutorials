@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import React from 'react';
 
-
 export const ButtonContainer = styled.View`
   flex-direction: row;
   justify-content: space-around;
@@ -13,7 +12,7 @@ const TouchableOpacity = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.colors.button || 'red'};
-  margin-top: 16px;
+  margin: 16px;
 `
 
 const ButtonText = styled.Text`
