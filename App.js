@@ -11,7 +11,7 @@ const theme = {
   colors: {
     dark: '#050505',
     light: '#F5F1E3',
-    button: '#1B9AAA',
+    button: '#FFFFFF',
     textLight: '#FFFFFF',
     textDark: '#4E598C',
     input: '#DDDBCB',
@@ -26,7 +26,7 @@ export default App = () =>
           cardStyle: { backgroundColor: theme.colors.dark }
         }}>
         <Stack.Screen
-          name="Styled Components"
+          name="Responsive Layouts"
           component={Home}
           options={{
             headerTintColor: theme.colors.textLight,

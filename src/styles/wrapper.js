@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.View`
+  margin: 24px;
   flex: 1;
-  margin: 16px;
-  align-items: center;
-  justify-content: center;
 `
